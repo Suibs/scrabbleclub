@@ -1,0 +1,51 @@
+<section id="users" class="mb-5">
+  <div class="container">
+    <div class"row">
+        <div class="col">
+            <%= link_to 'Add User',  new_user_path,class: "btn btn-primary float-right mb-5" %>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Joined Date</th>
+                    <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% @users.each do |user| %>
+                    <tr>
+                    <td>
+                        <%= user.id %>
+                    </td> 
+                    <td>
+                        <%= user.first_name %>
+                    </td>
+                    <td>
+                        <%= user.second_name %>
+                    </td>
+                    <td>
+                        <%= user.address %>
+                    </td>
+                    <td>
+                        <%= user.number %>
+                    </td>
+                    <td>
+                        <%= user.joined_at %>
+                    </td>
+                    <td>
+                        <%= link_to user do %>
+                            Check Profile
+                        <% end %>
+                    </td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<section id="edit">
+    <div class="container">
+        <div class="justify-content-center">
+            <h1> Create User </h1>
+            <%= form_for(@user) do |f| %>
+                <%= f.hidden_field :joined_at, :value => DateTime.now.to_date %>
+                <%= f.label :first_name%>
+                <%= f.text_field :first_name, class: 'form-control' %>
+
+                <%= f.label :second_name%>
+                <%= f.text_field :second_name, class: 'form-control' %>
+
+                <%= f.label :address%>
+                <%= f.text_field :address, class: 'form-control' %>
+
+                <%= f.label :number%>
+                <%= f.text_field :number, class: 'form-control' %>
+
+                <%= f.submit "Create", class: "btn btn-primary mt-2" %>
+            <% end %>
+        </div>
+    </div>
+
+</section>

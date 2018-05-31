@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number_of_win: 1
+  number_of_loss: 1
+  average_score: 1
+  user_id: 1
+
+two:
+  number_of_win: 1
+  number_of_loss: 1
+  average_score: 1
+  user_id: 1

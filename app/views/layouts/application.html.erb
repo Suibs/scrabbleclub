@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scrabble Club</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body id="wrapper">
+    <nav class="navbar navbar-expand-md navbar-light py-4">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <h3 class="d-inline align-middle">Scrabble Club</h3>
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <%= link_to 'Users',  root_path ,class: "nav-link" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to 'Leaderboard',  statistics_path ,class: "nav-link" %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <%= yield %>
+    <footer id="main-footer" class="bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="py-4">
+                        <h1 class="h3">Scrabble Club</h1>
+                        <p>Copyright &copy; 2018;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>

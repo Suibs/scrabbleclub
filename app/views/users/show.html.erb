@@ -1,0 +1,41 @@
+<section id="profile" class="mt-5">
+    <div class="container">
+      <div class="d-flex flex-row justify-content-center row-hl">
+          <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= @user.first_name + " " + @user.second_name %>
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted">
+                Member
+              </h6>
+              <h5>
+                Win: <%= @user.statistic.number_of_win %> |
+                Defeat: <%= @user.statistic.number_of_loss %>
+                <br/>
+                Average score: <%= @user.statistic.average_score %>
+                <br/>
+                <% if @user.statistic.highest_score_opponent.nil? %>
+                <% else %>
+                  Highest scoring match against: <%= @user.statistic.highest_score_opponent %>
+                  <br/>
+                  Date: <%= @user.statistic.highest_score_match_date %>
+                  <br/>
+                  Highest Score: <%= @user.statistic.highest_score %>
+                <% end %>              
+              <h5>
+              <hr>
+              <p class="card-text d-block">
+                Address: <%= @user.address %>
+                <br/>
+                Phone number: <%= @user.number %>
+                <br/>
+                Joined date: <%= @user.joined_at %>
+              </p>
+              <%= link_to 'Update Profile',  edit_user_path(@user),class: "btn btn-success btn-block" %>
+              <%= link_to 'Delete Profile',  { action: :destroy, id: @user.id }, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-block" %>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
